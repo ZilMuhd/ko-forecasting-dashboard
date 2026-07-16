@@ -643,7 +643,7 @@ fig1.update_layout(
     yaxis_title="Volume",
     hovermode="x unified",
 )
-st.plotly_chart(fig1, use_container_width=True)
+st.plotly_chart(fig1, use_container_width=True, theme=None)
 
 # ----------------------------------------------------------------------------
 # MODEL ACCURACY EVALUATION (NEW)
@@ -715,7 +715,7 @@ else:
         yaxis_title="Volume",
         hovermode="x unified",
     )
-    st.plotly_chart(fig_acc, use_container_width=True)
+    st.plotly_chart(fig_acc, use_container_width=True, theme=None)
 
     with st.expander("View full accuracy table"):
         st.dataframe(results.round(2), use_container_width=True, hide_index=True)
@@ -804,7 +804,7 @@ fig2.update_layout(
     yaxis_title="Volume",
     hovermode="x unified",
 )
-st.plotly_chart(fig2, use_container_width=True)
+st.plotly_chart(fig2, use_container_width=True, theme=None)
 
 # ----------------------------------------------------------------------------
 # DAILY / CUMULATIVE CHARTS
@@ -823,7 +823,7 @@ with col5:
         title=dict(text="Daily forecast", font=dict(size=14)),
         yaxis_title="Volume",
     )
-    st.plotly_chart(fig3, use_container_width=True)
+    st.plotly_chart(fig3, use_container_width=True, theme=None)
 with col6:
     fig4 = go.Figure(go.Scatter(
         x=forecast_df.index, y=forecast_df["Cumulative"],
@@ -836,7 +836,7 @@ with col6:
         title=dict(text="Cumulative outlook", font=dict(size=14)),
         yaxis_title="Cumulative volume",
     )
-    st.plotly_chart(fig4, use_container_width=True)
+    st.plotly_chart(fig4, use_container_width=True, theme=None)
 
 # ----------------------------------------------------------------------------
 # MONTHLY SUMMARY + DATA TABLE
